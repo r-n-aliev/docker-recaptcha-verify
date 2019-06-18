@@ -1,0 +1,13 @@
+version: '2'
+services:
+  recaptcha:
+    image: rnoaliev/recaptcha-verify
+    container_name: recaptcha_verify
+    expose:
+        - "${EXT_PORT}"
+    ports:
+        - "${EXT_PORT}:${PORT}"
+    environment:
+        - PORT
+        - CAPTCHA_SITEVERIFY_URI
+        - SECRET_KEY
