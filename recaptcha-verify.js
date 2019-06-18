@@ -35,7 +35,10 @@ request(opts)
   .then((response) => {
     console.log('Verification response:');
     console.log(response);
-    const verifResult = {success: response['success'], errors: response['error-codes']};
+    const verifResult = {
+      success: response['success'],
+      errors: response['error-codes'] ? response['error-codes'] : []
+    };
     res.send(verifResult);
    })
   .catch((err) => {
