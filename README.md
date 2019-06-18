@@ -4,6 +4,13 @@ Container starts nodeJS service, ready for [verifying Google reCaptcha](https://
 Start container: 
 `source start_with_env.sh`
 
-By default service will be available on _http://{docker-machine-IP}:8080/recaptcha-verify_
+By default service will be available by _POST_ on _http://{docker-machine-IP}:8080/recaptcha-verify_
+
+Example of request body (application/json):
+```
+{
+	"user-token":"your_token_value"
+}
+```
 
 Before **prod** using set your values for environment variables in [starter_with_env.sh](https://github.com/r-n-aliev/docker-recaptcha-verify/blob/master/starter_with_env.sh)
